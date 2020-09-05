@@ -1,0 +1,323 @@
+body {
+  color: black;
+  background-color: #aeaeae;
+  font-size: 11px;
+  font-family: Verdana;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0px;
+  font-size: 11px;
+  font-family: Verdana;
+}
+
+td {
+  color: black;
+  font-size: 11px;
+  font-family: Verdana;
+  vertical-align: top;
+}
+
+a {
+  color: navy;
+  font-size: 11px;
+  font-family: Verdana;
+  text-decoration: none;
+}
+
+/*
+a:visited { color: navy; font-size: 10px; font-family: Verdana; text-decoration: none }
+a:link { color: navy; font-size: 10px; font-family: Verdana; text-decoration: none }
+*/
+
+a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+input {
+  color: black;
+  font-size: 11px;
+  font-family: Verdana;
+}
+
+button {
+  color: black;
+  font-size: 11px;
+  font-family: Verdana;
+}
+
+textarea {
+  color: black;
+  font-size: 11px;
+  font-family: Verdana;
+}
+
+select {
+  color: black;
+  font-size: 11px;
+  font-family: Verdana;
+}
+
+table.blank_button {
+}
+
+td.blank_button {
+  width: 90px;
+}
+
+/* UUUSIA */
+table.person {
+  width: 100%;
+  margin: 0px;
+  padding: 2px;
+  /*	border: solid 1px #555588; */
+}
+
+td.person {
+  padding: 2px;
+}
+
+table.legend {
+  width: 100%;
+  margin: 0px;
+  padding: 3px;
+  border: solid 1px #555588;
+  background-color: #d3e5f3;
+}
+
+td.legend {
+  width: 17px;
+  font-weight: bold;
+}
+
+td.legend_desc {
+  padding: 2px;
+  /* width: 155px; */
+}
+
+td.menu {
+  padding: 4px;
+  border-collapse: collapse;
+  border-spacing: 0px;
+  font-size: 11px;
+  font-family: Verdana;
+  border: solid 1px #555588;
+  background-color: #aaccee;
+  vertical-align: top;
+  width: 110px;
+}
+
+.menu {
+  width: 90px;
+}
+
+.top {
+  vertical-align: top;
+}
+
+.mod_counter {
+  width: 30px;
+  height: 17px;
+  vertical-align: middle;
+  border: 0px none;
+  background-color: #eeeef4;
+}
+
+.mod_count {
+  width: 30px;
+  height: 17px;
+  vertical-align: middle;
+  border: solid 1px #555588;
+}
+
+.mod_daypart {
+  width: 23px;
+  height: 17px;
+  vertical-align: middle;
+  border: solid 1px #555588;
+}
+
+.mod_day_title {
+  width: 20px;
+  height: 18px;
+  border: solid 1px #888888;
+  vertical-align: middle;
+  text-align: center;
+  padding: 0px;
+}
+
+.mod_day {
+  width: 21px;
+  height: 18px;
+  border: 0px none;
+  /*border: solid 1px #332266; */
+  vertical-align: middle;
+  text-align: center;
+  padding: 0px;
+}
+
+.mod_weekend {
+  width: 18px;
+  height: 18px;
+  border: solid 2px #3322ee;
+  /* outline: solid 1px #3322ee; */
+  font-weight: bold;
+  text-align: center;
+}
+
+.mod_day_input {
+  width: 21px;
+  height: 18px;
+  /*	border: 0px none; */
+  border: solid 1px #bbbbbb;
+  text-transform: capitalize;
+  font-size: 12px;
+  text-align: center;
+}
+
+.mod_weekend_input {
+  width: 21px;
+  height: 18px;
+  border: solid 1px #3322ee;
+  text-transform: capitalize;
+  font-size: 12px;
+  text-align: center;
+}
+
+.mod_name {
+  width: 50px;
+  vertical-align: middle;
+  border: solid 1px #555588;
+  font-weight: bold;
+}
+
+.mod_hidden_name {
+  width: 50px;
+  border: none;
+}
+
+.mod_hidden_daypart {
+  width: 23px;
+  border: none;
+}
+
+.mod_hidden_count {
+  widht: 30px;
+  border: none;
+}
+
+.spacer {
+  height: 20px;
+}
+
+/* UUUUUSIA LOPPUU */
+
+/* Majoitus RAJAUS */
+
+table.rajaus {
+  /* width: 100%; */
+  /* padding: 2px; */
+  margin: 0px;
+  border-collapse: collapse;
+  border-spacing: 0px;
+  font-size: 11px;
+  font-family: Verdana;
+  border: solid 1px #555588;
+  background-color: #eeeef4;
+}
+
+td.rajaus {
+  font-size: 11px;
+  vertical-align: top;
+  width: 130px;
+}
+
+td.rajaus_text {
+  font-size: 11px;
+  vertical-align: middle;
+}
+
+td.rajaus_btn {
+  font-size: 11px;
+  vertical-align: bottom;
+  text-align: right;
+}
+
+td.rajaus_pv_title {
+  font-size: 11px;
+  vertical-align: bottom;
+  text-align: center;
+}
+
+td.rajaus_pv_cb {
+  font-size: 11px;
+  vertical-align: top;
+  text-align: center;
+}
+
+table.free_room {
+  border: solid 1px #555588;
+}
+
+td.free_room {
+  vertical-align: top;
+  border: solid 1px #333333;
+}
+
+td.pv_cb {
+  width: 15px;
+  font-size: 11px;
+  vertical-align: top;
+  text-align: center;
+}
+
+/*****************/
+/* Misc */
+
+tr.row_a {
+  border: solid 1px black;
+}
+
+tr.row_b {
+  border: solid 1px black;
+}
+
+td.row_a {
+  background-color: #f6f6f6; /* #f1f3d3 */
+}
+
+td.row_b {
+  background-color: #e6e6f4; /* #e1e3c3 */
+}
+
+.login_user {
+  color: purple;
+  font-size: 9px;
+  font-family: Verdana;
+  text-decoration: none;
+}
+
+.login_title {
+  color: navy;
+  font-size: 9px;
+  font-family: Verdana;
+  text-decoration: none;
+}
+
+.title {
+  color: white;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  font-family: Verdana;
+  letter-spacing: 3px;
+}
+
+.version_text {
+  color: #eeeeee;
+  font-size: 10px;
+  font-family: Verdana;
+  text-decoration: none;
+}
