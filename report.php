@@ -73,7 +73,7 @@ class PDF extends FPDF
       //Move to the right
       $this->Cell(80);
       //Title
-      $this->Cell(30, 7, $this->Title, 0, 0, 'C');
+      $this->Cell(30, 7, utf8_decode($this->Title), 0, 0, 'C');
       $this->SetFont('Arial', '', 10);
       $this->Cell(80, 7, 'Tulostettu: ' . Date('j.n.Y G:i'), 0, 0, 'R');
       //Line break
@@ -94,7 +94,7 @@ class PDF extends FPDF
 
       $this->Line(10, 282, 200, 282);
 
-      $this->Cell(50, 5, 'PaTe 2007 - DataCodex', 0, 0, 'L');
+      $this->Cell(50, 5, 'PaTe 2020 - DataCodex', 0, 0, 'L');
       $this->Cell(90, 5, $srk, 0, 0, 'C');
       $this->Cell(50, 5, 'Sivu ' . $this->PageNo() . '/{nb}', 0, 0, 'R');
     }
@@ -121,7 +121,7 @@ $pdf->SetLineWidth(.2);
 
 //Header
 $pdf->SetFont('Arial', '', 18);
-$pdf->Cell(120, 8, monthofyear($month));
+$pdf->Cell(120, 8, utf8_decode(monthofyear($month)));
 $pdf->Ln();
 $pdf->SetFont('Arial', '', 14);
 $pdf->Cell(40, 6, $year);
@@ -145,11 +145,11 @@ $pdf->Cell($width[2], $lineheight, 'toimisto', 'T');
 $pdf->SetFont('Arial', 'B', 10);
 $pdf->Cell($width[3], $lineheight, 'M', 'T');
 $pdf->SetFont('Arial', '', 10);
-$pdf->Cell($width[4], $lineheight, 'ty�matka', 'T');
+$pdf->Cell($width[4], $lineheight, utf8_decode('työmatka'), 'T');
 $pdf->SetFont('Arial', 'B', 10);
 $pdf->Cell($width[5], $lineheight, '', 'T');
 $pdf->SetFont('Arial', 'U', 10);
-$pdf->Cell($width[6], $lineheight, 'ty�teht�v�t toimip. ulkop.', 'TR');
+$pdf->Cell($width[6], $lineheight, utf8_decode('työtehtävät toimip. ulkop.'), 'TR');
 $pdf->Ln();
 
 $pdf->Cell($width[0]);
@@ -164,7 +164,7 @@ $pdf->Cell($width[4], $lineheight, 'saarnan-/tekstinvalmistus', '');
 $pdf->SetFont('Arial', 'B', 10);
 $pdf->Cell($width[5], $lineheight, 'U1', '');
 $pdf->SetFont('Arial', '', 10);
-$pdf->Cell($width[6], $lineheight, 'koti-/sairask�ynti, toimitukset', 'R');
+$pdf->Cell($width[6], $lineheight, utf8_decode('koti-/sairaskäynti, toimitukset'), 'R');
 $pdf->Ln();
 
 $pdf->Cell($width[0]);
@@ -179,18 +179,18 @@ $pdf->Cell($width[4], $lineheight, 'artikkelien valmistus', '');
 $pdf->SetFont('Arial', 'B', 10);
 $pdf->Cell($width[5], $lineheight, 'U2', '');
 $pdf->SetFont('Arial', '', 10);
-$pdf->Cell($width[6], $lineheight, 'neuvottelu/edustusteht�v�t', 'R');
+$pdf->Cell($width[6], $lineheight, utf8_decode('neuvottelu/edustustehtävät'), 'R');
 $pdf->Ln();
 
 $pdf->Cell($width[0]);
 $pdf->SetFont('Arial', 'B', 10);
 $pdf->Cell($width[1], $lineheight, 'X', 'L');
 $pdf->SetFont('Arial', '', 10);
-$pdf->Cell($width[2], $lineheight, 'pastorip�ivistys', '');
+$pdf->Cell($width[2], $lineheight, utf8_decode('pastoripäivistys'), '');
 $pdf->SetFont('Arial', 'B', 10);
 $pdf->Cell($width[3], $lineheight, 'V', '');
 $pdf->SetFont('Arial', '', 10);
-$pdf->Cell($width[4], $lineheight, 'vapaap�iv�', '');
+$pdf->Cell($width[4], $lineheight, utf8_decode('vapaapäivä'), '');
 $pdf->SetFont('Arial', 'B', 10);
 $pdf->Cell($width[5], $lineheight, 'U3', '');
 $pdf->SetFont('Arial', '', 10);
@@ -209,7 +209,7 @@ $pdf->Cell($width[4], $lineheight, 'loma', 'B');
 $pdf->SetFont('Arial', 'B', 10);
 $pdf->Cell($width[5], $lineheight, 'U4', 'B');
 $pdf->SetFont('Arial', '', 10);
-$pdf->Cell($width[6], $lineheight, 'ty�muoto/pienryhm�/leiri', 'RB');
+$pdf->Cell($width[6], $lineheight, utf8_decode('työmuoto/pienryhmä/leiri'), 'RB');
 $pdf->Ln();
 
 $pdf->Ln();
@@ -240,7 +240,7 @@ for ($row = 0; $row < 2; $row++) {
     $pdf->Cell(20, 4, 'Vapaita', 0, 0, 'L');
     $pdf->Cell(10, 4, $vapaita, 0, 0, 'L');
   } elseif ($row == 1) {
-    $pdf->Cell(20, 4, 'Ty�p�ivi�', 0, 0, 'L');
+    $pdf->Cell(20, 4, utf8_decode('Työpäiviä'), 0, 0, 'L');
     $pdf->Cell(10, 4, $tyopaivia, 0, 0, 'L');
   }
 
@@ -262,7 +262,7 @@ for ($row = 0; $row < 2; $row++) {
 }
 $pdf->SetLineWidth(.2);
 
-$pdf->Cell(20, 4, 'Ty�vuoroja', 0, 0, 'L');
+$pdf->Cell(20, 4, utf8_decode('Työvuoroja'), 0, 0, 'L');
 $pdf->Cell(10, 4, $tyovuoroja, 0, 0, 'L');
 $pdf->Ln();
 $pdf->Ln();
@@ -291,7 +291,7 @@ while (is_array($person_row = $db_person->FetchArray())) {
       $pdf->Cell(26, $rowheight, '', $border . 'LR', 0, 'L');
       $pdf->Cell(8, $rowheight, '', $border . 'LR', 0, 'L');
     } elseif ($row == 1) {
-      $pdf->Cell(26, $rowheight, ' ' . $person_row['firstname'], $border . 'LR', 0, 'L');
+      $pdf->Cell(26, $rowheight, ' ' . utf8_decode($person_row['firstname']), $border . 'LR', 0, 'L');
       $pdf->Cell(8, $rowheight, ($merkattuja - $tyovuoroja), $border . 'LR', 0, 'C');
     } else {
       $pdf->Cell(26, $rowheight, '', $border . 'LR', 0, 'L');
@@ -345,7 +345,7 @@ while (is_array($person_row = $db_person->FetchArray())) {
   }
   $db->Close();
 
-  $pdf->Cell(34, $rowheight, 'Lis�tiedot:', 0, 0, 'L');
+  $pdf->Cell(34, $rowheight, utf8_decode('Lisätiedot:'), 0, 0, 'L');
   $pdf->Cell(5 * $daysinmonth, $rowheight, $info, 0, 0, 'L');
 
   $pdf->Ln();

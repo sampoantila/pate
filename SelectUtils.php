@@ -12,7 +12,7 @@ function MakeSelect($array, $name, $selection, $options = '', $print = true)
       $value = $index;
 
     if ($value == $selection)
-      $retval .= '<option selected value="' . $value . '">' . $key . '</option>' . "\n";
+      $retval .= '<option selected value="' . $value . '">' . htmlspecialchars($key) . '</option>' . "\n";
     else
       $retval .= "<option value=\"$value\">$key</option>\n";
   }
@@ -31,9 +31,9 @@ function MakeMonthSelect($name, $selection, $options = '', $print = true)
 
   for ($i = 1; $i <= 12; $i++) {
     if ($i == $selection)
-      $retval .= '<option selected value="' . $i . '">' . monthofyear($i) . '</option>' . "\n";
+      $retval .= '<option selected value="' . $i . '">' . htmlspecialchars(monthofyear($i)) . '</option>' . "\n";
     else
-      $retval .= "<option value=\"$i\">" . monthofyear($i) . "</option>\n";
+      $retval .= "<option value=\"$i\">" . htmlspecialchars(monthofyear($i)) . "</option>\n";
   }
 
   $retval .= "</select>\n\n";

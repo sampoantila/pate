@@ -61,10 +61,10 @@ function monthofyear($month)
       $name = 'Toukokuu';
       break;
     case 6:
-      $name = 'Kes&auml;kuu';
+      $name = 'Kesäkuu';
       break;
     case 7:
-      $name = 'Hein&auml;kuu';
+      $name = 'Heinäkuu';
       break;
     case 8:
       $name = 'Elokuu';

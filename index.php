@@ -94,7 +94,7 @@ require_once 'PateUtils.php';
               <table style="width:100%">
                 <tr>
                   <td style="font-size:15px; font-weight:bold;">
-                    <b><?php print monthofyear($month); ?><br><span style="font-size:12px;"><?php print $year; ?></span>&nbsp;&nbsp;&nbsp;</b>
+                    <b><?php print htmlspecialchars(monthofyear($month)); ?><br><span style="font-size:12px;"><?php print $year; ?></span>&nbsp;&nbsp;&nbsp;</b>
                   </td>
                   <td></td>
                 </tr>
