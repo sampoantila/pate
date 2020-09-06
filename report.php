@@ -307,8 +307,9 @@ while (is_array($person_row = $db_person->FetchArray())) {
 
       $db->Query($sql);
       if ($db->NumRows() > 0) {
-        $mod_id = $db->GetResultField('id');
-        $value = $db->GetResultField('mark');
+        $db_row = $db->FetchArray();
+        $mod_id = $db_row['id'];
+        $value = $db_row['mark'];
       } else {
         $mod_id = 0;
         $value = '';
@@ -337,8 +338,9 @@ while (is_array($person_row = $db_person->FetchArray())) {
 
   $db->Query($sql);
   if ($db->NumRows() > 0) {
-    $info_id = $db->GetResultField('id');
-    $info = $db->GetResultField('info');
+    $db_row = $db->FetchArray();
+    $info_id = $db_row['id'];
+    $info = $db_row['info'];
   } else {
     $info = '';
     $info_id = 0;
