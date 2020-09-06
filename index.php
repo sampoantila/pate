@@ -6,16 +6,16 @@ require_once 'SelectUtils.php';
 require_once 'PateUtils.php';
 ?>
 
-<!-- (c) Copyright 2006 - 2014 DataCodex -->
+<!-- (c) Copyright 2006 - 2020 DataCodex -->
 
 <!DOCTYPE html>
 
-<html>
+<html lang="fi">
 
 <head>
-  <meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
-  <script language="JavaScript" src="form.js" type="text/javascript"></script>
-  <script language="JavaScript" src="pate.js" type="text/javascript"></script>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <script src="form.js"></script>
+  <script src="pate.js"></script>
   <link rel="stylesheet" href="pate.css" type="text/css">
   <title>PaTe - Pastorien teot</title>
 </head>
@@ -58,14 +58,11 @@ require_once 'PateUtils.php';
       $tyopaivia++;
   }
   $tyovuoroja = $tyopaivia * 2;
-
   ?>
 
-  <!-- <form id="lomake" method="post" action="store.php"> -->
   <table class="rajaus">
     <tr>
       <td class="menu">
-
         VALIKKO
         <br>
         <br>
@@ -77,14 +74,9 @@ require_once 'PateUtils.php';
         <br>
         Valitse&nbsp;kuukausi:<br>
         <?php MakeMonthSelect('month', $month, 'class="menu" id="month" onchange="call(\'?year=\'+getElementById(\'year\').value+\'&month=\'+getElementById(\'month\').value)"'); ?>
-        <!--   <br>
-   <br>
-   <button class="menu" onclick="call('index.php?year=&month=');">Hae kk</button>
--->
         <br>
         <br>
         <button class="menu" onclick="call('report.php?year='+getElementById('year').value+'&month='+getElementById('month').value)">Tulosta kk</button>
-
         <br>
         <br>
         &nbsp;&nbsp;<?php if (isset($_SESSION['pate_message'])) {
@@ -133,146 +125,9 @@ require_once 'PateUtils.php';
                         </td>
                       </tr>
                     </table><br>
-
                   </td>
-
                   <td>
-                    <table class="legend">
-                      <tr>
-                        <td class="legend">
-                          T
-                        </td>
-                        <td class="legend_desc">
-                          toimisto
-                        </td>
-                        <td class="legend">
-                          &nbsp;
-                        </td>
-                        <td class="legend">
-                          M
-                        </td>
-                        <td class="legend_desc">
-                          ty&ouml;matka
-                        </td>
-                        <td class="legend">
-                          &nbsp;
-                        </td>
-                        <td class="legend_desc" colspan="2">
-                          <u>Ty&ouml;teht&auml;v&auml;t toimip.ulkop.</u>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="legend">
-                          P
-                        </td>
-                        <td class="legend_desc">
-                          palaveri
-                        </td>
-                        <td class="legend">
-                          &nbsp;
-                        </td>
-                        <td class="legend">
-                          S
-                        </td>
-                        <td class="legend_desc">
-                          saarnan-/tekstinvalmistus
-                        </td>
-                        <td class="legend">
-                          &nbsp;
-                        </td>
-                        <td class="legend">
-                          U1
-                        </td>
-                        <td class="legend_desc">
-                          koti-/sairask&auml;ynti,&nbsp;toimitukset
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="legend">
-                          K
-                        </td>
-                        <td class="legend_desc">
-                          kokous
-                        </td>
-                        <td class="legend">
-                          &nbsp;
-                        </td>
-                        <td class="legend">
-                          A
-                        </td>
-                        <td class="legend_desc">
-                          artikkelin-/askartelunvalmistus
-                        </td>
-                        <td class="legend">
-                          &nbsp;
-                        </td>
-                        <td class="legend">
-                          U2
-                        </td>
-                        <td class="legend_desc">
-                          neuvottelu/edustusteht.
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="legend">
-                          R
-                        </td>
-                        <td class="legend_desc">
-                          rukous
-                        </td>
-                        <td class="legend">
-                          &nbsp;
-                        </td>
-                        <td class="legend">
-                          V
-                        </td>
-                        <td class="legend_desc">
-                          vapaap&auml;iv&auml;
-                        </td>
-                        <td class="legend">
-                          &nbsp;
-                        </td>
-                        <td class="legend">
-                          U3
-                        </td>
-                        <td class="legend_desc">
-                          evankeliointi/kouluty&ouml;
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="legend">
-                          O
-                        </td>
-                        <td class="legend_desc">
-                          opiskelu
-                        </td>
-                        <td class="legend">
-                          &nbsp;
-                        </td>
-                        <td class="legend">
-                          L
-                        </td>
-                        <td class="legend_desc">
-                          loma (<span style="font-weight:bold">Z</span> sairasloma)
-                        </td>
-                        <td class="legend">
-                          &nbsp;
-                        </td>
-                        <td class="legend">
-                          U4
-                        </td>
-                        <td class="legend_desc">
-                          ty&ouml;muoto/pienryhm&auml;/leiri
-                        </td>
-                      </tr>
-                    </table>
-                    <br>
-                    Saarnan-/tekstinvalmistukseen k&auml;ytett&auml;v&auml; aika on 2-4 moduulia.<br>
-                    Muihin tilaisuuksiin valmistautumiseen k&auml;ytett&auml;v&auml; aika on 1-2 moduuli.<br>
-                    Ammattikirjallisuuteen tai opiskeluun k&auml;ytett&auml;v&auml; aika on 1 moduuli/viikko.<br>
-                    Rukoukseen k&auml;ytett&auml;v&auml; aika on 1 moduuli/viikko.<br>
-                    Vapaap&auml;iv&auml; tulee k&auml;ytt&auml;&auml; kyseisen kuukauden aikana, max 3pv per&auml;kk&auml;in<br>
-                    <br>
+                    <?php include "legend.php" ?>
                   </td>
                 </tr>
               </table>
@@ -359,8 +214,9 @@ require_once 'PateUtils.php';
 
                       $db_mod->Query($sql);
                       if ($db_mod->NumRows() > 0) {
-                        $mod_id = $db_mod->GetResultField('id');
-                        $value = $db_mod->GetResultField('mark');
+                        $db_mod_row = $db_mod->FetchArray();
+                        $mod_id = $db_mod_row['id'];
+                        $value = $db_mod_row['mark'];
                       } else {
                         $mod_id = 0;
                         $value = '';
@@ -390,8 +246,9 @@ require_once 'PateUtils.php';
 
                   $db_mod->Query($sql);
                   if ($db_mod->NumRows() > 0) {
-                    $info_id = $db_mod->GetResultField('id');
-                    $info = $db_mod->GetResultField('info');
+                    $db_mod_row = $db_mod->FetchArray();
+                    $info_id = $db_mod_row['id'];
+                    $info = $db_mod_row['info'];
                   } else {
                     $info = '';
                     $info_id = 0;
@@ -410,18 +267,15 @@ require_once 'PateUtils.php';
 
                 print '</table>' . "\n";
                 $db->Close();
-
                 ?>
+              </form>
             </td>
           </tr>
         </table>
-        </form>
       </td>
     </tr>
   </table>
-  <!-- </form> -->
   <hr>
-  <?php print $_SERVER['HTTP_USER_AGENT']; ?>
 </body>
 
 </html>
